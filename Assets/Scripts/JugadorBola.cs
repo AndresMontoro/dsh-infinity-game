@@ -29,8 +29,11 @@ public class JugadorBola : MonoBehaviour
         {
             CambiarDireccion();
         }
+    }
 
-        transform.Translate(DireccionActual * velocidad * Time.deltaTime);
+    void FixedUpdate()
+    {
+        transform.Translate(DireccionActual * velocidad * Time.deltaTime, Space.World);
     }
 
     private void OnCollisionExit(Collision collision)
