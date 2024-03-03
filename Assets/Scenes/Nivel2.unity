@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -226,7 +226,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &906575774
 SphereCollider:
@@ -327,13 +327,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 1356515679}
-  suelo: {fileID: 2703185372083095777, guid: c82d550e089f1654a9b80d5ef5b22eb3, type: 3}
+  suelo: {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
   velocidad: 5
   suelosAleatorios:
+  - {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
   - {fileID: 2703185372083095777, guid: 859ee886d78eb2e419337fc6ef177e03, type: 3}
   - {fileID: 2703185372083095777, guid: 00348ac283ba51e4db4d7c1d61befb87, type: 3}
-  - {fileID: 2703185372083095777, guid: c82d550e089f1654a9b80d5ef5b22eb3, type: 3}
-  - {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
 --- !u!1 &1151544607
 GameObject:
   m_ObjectHideFlags: 0
