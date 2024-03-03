@@ -8,6 +8,8 @@ public class JugadorBola : MonoBehaviour
     public GameObject suelo;
     public float velocidad = 5;
 
+    public GameObject[] suelosAleatorios = new GameObject[1];
+
     private Vector3 offset;
     private float Valx, Valz;
     private Vector3 DireccionActual;
@@ -55,7 +57,10 @@ public class JugadorBola : MonoBehaviour
         {
             Valz += 6.0f;
         }
-        Instantiate(suelo, new Vector3(Valx, 0, Valz), Quaternion.identity);
+
+        // Instantiate(suelo, new Vector3(Valx, 0, Valz), Quaternion.identity);
+        int randomIndex = Random.Range(0, suelosAleatorios.Length);
+        Instantiate(suelosAleatorios[randomIndex], new Vector3(Valx, 0, Valz), Quaternion.identity);
 
         yield return new WaitForSeconds(2);
         suelo.gameObject.GetComponent<Rigidbody>().isKinematic = false;

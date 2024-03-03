@@ -327,8 +327,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camara: {fileID: 1356515679}
-  suelo: {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
+  suelo: {fileID: 2703185372083095777, guid: c82d550e089f1654a9b80d5ef5b22eb3, type: 3}
   velocidad: 5
+  suelosAleatorios:
+  - {fileID: 2703185372083095777, guid: 859ee886d78eb2e419337fc6ef177e03, type: 3}
+  - {fileID: 2703185372083095777, guid: 00348ac283ba51e4db4d7c1d61befb87, type: 3}
+  - {fileID: 2703185372083095777, guid: c82d550e089f1654a9b80d5ef5b22eb3, type: 3}
+  - {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
 --- !u!1 &1151544607
 GameObject:
   m_ObjectHideFlags: 0
