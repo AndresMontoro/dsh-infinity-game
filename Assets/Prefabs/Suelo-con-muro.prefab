@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4843649772764775739}
   - component: {fileID: 1319734328665365091}
   - component: {fileID: 3641516522625526412}
+  - component: {fileID: 7546355755471614293}
   m_Layer: 0
   m_Name: Suelo-con-muro
   m_TagString: Suelo
@@ -135,6 +136,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7546355755471614293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703185372083095777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec744885c35f364a9bb66803b17bfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasCollided: 0
 --- !u!1 &4482014967156632649
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,8 +177,8 @@ Transform:
   m_GameObject: {fileID: 4482014967156632649}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.1541, y: 1.01, z: 0.475}
-  m_LocalScale: {x: 0.05, y: 1, z: 0.69179106}
+  m_LocalPosition: {x: -0.19942, y: 1.01, z: 0.475}
+  m_LocalScale: {x: 0.05, y: 1, z: 0.6011526}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7281952289764081164}
@@ -268,8 +282,8 @@ Transform:
   m_GameObject: {fileID: 4620150216813998214}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.476, y: 1.01, z: -0.17886}
-  m_LocalScale: {x: 0.05, y: 1, z: 0.6402825}
+  m_LocalPosition: {x: 0.476, y: 1.01, z: -0.19978}
+  m_LocalScale: {x: 0.05, y: 1, z: 0.5984336}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7281952289764081164}

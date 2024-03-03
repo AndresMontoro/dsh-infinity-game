@@ -401,7 +401,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camara: {fileID: 1302377001}
   suelo: {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
-  velocidad: 15
+  velocidad: 10
+  suelosAleatorios:
+  - {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
+  - {fileID: 2703185372083095777, guid: c82d550e089f1654a9b80d5ef5b22eb3, type: 3}
+  - {fileID: 2703185372083095777, guid: 859ee886d78eb2e419337fc6ef177e03, type: 3}
+  - {fileID: 2703185372083095777, guid: 00348ac283ba51e4db4d7c1d61befb87, type: 3}
+  - {fileID: 2703185372083095777, guid: 859ee886d78eb2e419337fc6ef177e03, type: 3}
+  - {fileID: 2703185372083095777, guid: 21f1176405b34aa498821cd251afc620, type: 3}
 --- !u!54 &1518048969
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -427,7 +434,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &1518048970
 SphereCollider:
@@ -509,7 +516,7 @@ Transform:
   m_GameObject: {fileID: 1518048967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.11, z: -0.06}
+  m_LocalPosition: {x: 0, y: 1, z: -0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

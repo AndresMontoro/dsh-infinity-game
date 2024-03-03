@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 4843649772764775739}
   - component: {fileID: 1319734328665365091}
   - component: {fileID: 3641516522625526412}
+  - component: {fileID: -8473476387640089272}
   m_Layer: 0
   m_Name: Suelo-con-obstaculos-laterales
   m_TagString: Suelo
@@ -240,6 +241,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-8473476387640089272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703185372083095777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec744885c35f364a9bb66803b17bfdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wasCollided: 0
 --- !u!1 &4620150216813998214
 GameObject:
   m_ObjectHideFlags: 0

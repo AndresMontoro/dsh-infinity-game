@@ -11,7 +11,7 @@ public class JugadorBola : MonoBehaviour
     public GameObject[] suelosAleatorios = new GameObject[1];
 
     private Vector3 offset;
-    private float Valx, Valz;
+    private float Valx = 0.0f, Valz= 0.0f, ValxP = 0.0f;
     private Vector3 DireccionActual;
     private float lastSueloTime;
 
@@ -38,17 +38,23 @@ public class JugadorBola : MonoBehaviour
         transform.Translate(DireccionActual * velocidad * Time.deltaTime, Space.World);
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Suelo")
         {
-            StartCoroutine(BorrarSuelo(collision.gameObject));
+            Collided collided = collision.gameObject.GetComponent<Collided>();
+            if (!collided.wasCollided)
+            { 
+                StartCoroutine(BorrarSuelo(collision.gameObject));
+                collided.wasCollided = true;
+            }
         }
     }
 
     IEnumerator BorrarSuelo(GameObject suelo)
     {
         float aleatorio = Random.Range(0.0f, 1.0f);
+        ValxP = Valx;
         if (aleatorio > 0.5)
         {
             Valx += 6.0f;
@@ -60,7 +66,10 @@ public class JugadorBola : MonoBehaviour
 
         // Instantiate(suelo, new Vector3(Valx, 0, Valz), Quaternion.identity);
         int randomIndex = Random.Range(0, suelosAleatorios.Length);
-        Instantiate(suelosAleatorios[randomIndex], new Vector3(Valx, 0, Valz), Quaternion.identity);
+        if (ValxP != Valx)
+            Instantiate(suelosAleatorios[randomIndex], new Vector3(Valx, 0, Valz), Quaternion.Euler(0, 90, 0));
+        else
+            Instantiate(suelosAleatorios[randomIndex], new Vector3(Valx, 0, Valz), Quaternion.identity);
 
         yield return new WaitForSeconds(2);
         suelo.gameObject.GetComponent<Rigidbody>().isKinematic = false;
