@@ -272,6 +272,8 @@ MonoBehaviour:
   camara: {fileID: 1356515679}
   suelo: {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
   velocidad: 5
+  suelosAleatorios:
+  - {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
 --- !u!1 &1151544607
 GameObject:
   m_ObjectHideFlags: 0
