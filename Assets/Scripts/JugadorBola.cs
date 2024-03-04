@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class JugadorBola : MonoBehaviour 
 {
     public Camera camara;
     public GameObject suelo;
+    public GameObject win, lose;
     public float velocidad = 5;
     public int limitePuntuacion = 1;
+    public Text Puntos;
 
     public GameObject[] suelosAleatorios = new GameObject[1];
 
@@ -40,6 +43,10 @@ public class JugadorBola : MonoBehaviour
         {
             CambiarDireccion();
         }
+        if (transform.position.y < -10)
+        {
+            StartCoroutine(Perdiste());
+        }
     }
 
     void FixedUpdate()
@@ -58,6 +65,15 @@ public class JugadorBola : MonoBehaviour
                 collided.wasCollided = true;
             }
         }
+    }
+
+    IEnumerator Perdiste ()
+    {
+        transform.GetComponent<Rigidbody>().isKinematic = true;
+        velocidad = 0.0f;
+        lose.SetActive(true);
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene("SampleScene");
     }
 
     IEnumerator BorrarSuelo(GameObject suelo)
@@ -87,13 +103,21 @@ public class JugadorBola : MonoBehaviour
         Destroy(suelo);
 
         puntuacion++;
+        Puntos.text = "Puntuacion: " + puntuacion;
         Debug.Log("Puntuacion: " + puntuacion);
         if (puntuacion == limitePuntuacion)
         {
             indiceEscenaActual++;
             if (indiceEscenaActual > 3)
             {
-                SceneManager.LoadScene("SampleScene");
+                if (transform.position.y >= -10)
+                {
+                    transform.GetComponent<Rigidbody>().isKinematic = true;
+                    velocidad = 0.0f;
+                    win.SetActive(true);
+                    yield return new WaitForSeconds(2);
+                    SceneManager.LoadScene("SampleScene");
+                }
             }
             else
             {
