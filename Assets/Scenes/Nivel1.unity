@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -272,6 +272,7 @@ MonoBehaviour:
   camara: {fileID: 1356515679}
   suelo: {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
   velocidad: 5
+  limitePuntuacion: 20
   suelosAleatorios:
   - {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
 --- !u!1 &1151544607
