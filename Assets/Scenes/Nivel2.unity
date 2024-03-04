@@ -272,6 +272,7 @@ MonoBehaviour:
   camara: {fileID: 1356515679}
   suelo: {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
   velocidad: 5
+  limitePuntuacion: 7
   suelosAleatorios:
   - {fileID: 2703185372083095777, guid: 131051fbc6492494c92b6ec11e0727c6, type: 3}
   - {fileID: 2703185372083095777, guid: 859ee886d78eb2e419337fc6ef177e03, type: 3}

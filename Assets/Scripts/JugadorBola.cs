@@ -1,19 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JugadorBola : MonoBehaviour 
 {
     public Camera camara;
     public GameObject suelo;
     public float velocidad = 5;
+    public int limitePuntuacion = 1;
 
     public GameObject[] suelosAleatorios = new GameObject[1];
 
     private Vector3 offset;
     private float Valx = 0.0f, Valz= 0.0f, ValxP = 0.0f;
     private Vector3 DireccionActual;
+
+    private int indiceEscenaActual;
     private float lastSueloTime;
+    private int puntuacion;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +26,10 @@ public class JugadorBola : MonoBehaviour
         offset = camara.transform.position;
         CrearSueloInicial();
         DireccionActual = Vector3.forward;
+        puntuacion = 0;
+
+        Scene escenaActual = SceneManager.GetActiveScene();
+        indiceEscenaActual = escenaActual.buildIndex;
     }
 
     // Update is called once per frame
@@ -76,6 +85,21 @@ public class JugadorBola : MonoBehaviour
         suelo.gameObject.GetComponent<Rigidbody>().useGravity = true;
         yield return new WaitForSeconds(2);
         Destroy(suelo);
+
+        puntuacion++;
+        Debug.Log("Puntuacion: " + puntuacion);
+        if (puntuacion == limitePuntuacion)
+        {
+            indiceEscenaActual++;
+            if (indiceEscenaActual > 3)
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+            else
+            {
+                SceneManager.LoadScene("Nivel" + indiceEscenaActual.ToString());
+            }
+        }
     }
 
     void CrearSueloInicial()
